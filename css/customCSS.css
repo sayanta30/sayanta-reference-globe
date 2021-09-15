@@ -1,0 +1,26 @@
+body{
+   background-color: #f8f8f8;
+}
+table{
+   background-color: #fff;
+}
+.imagePreview{
+   width: 10rem;
+   height: 10rem;
+   border-radius: 50%;
+   box-shadow: 0 0 12px 0 rgba(0,0,0,0.6);
+}
+.imagePreviewNavbar{
+   width: 4rem;
+   height: 4rem;
+   border-radius: 50%;
+   box-shadow: 0 0 12px 0 rgba(0,0,0,0.6);
+}
+
+li {
+   list-style-type: none;
+}
+
+footer{
+   background-color: rgba(0,0,0,0.1);
+}
