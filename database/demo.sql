@@ -40,7 +40,7 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`_id`, `user_name`, `user_email`, `user_pass`, `user_mobile`, `user_profile_photo`, `user_dob`, `user_signature`, `user_aadhar_card`, `user_pan_card`, `user_role`) VALUES
 (1, 'Super Admin', 'superadmin@superadmin.com', 'c4ca4238a0b923820dcc509a6f75849b', '0123456789', '21.jpg', '2000-04-30', 'S Admin', '21.jpg', '21.jpg', 'Super Admin'),
-(2, 'Admin', 'admin@admin.coma', 'c4ca4238a0b923820dcc509a6f75849b', '1234567890', '21.jpg', '2021-09-15', 'Admin', '21.jpg', '21.jpg', 'User');
+(2, 'Admin', 'admin@admin.com', 'c4ca4238a0b923820dcc509a6f75849b', '1234567890', '21.jpg', '2021-09-15', 'Admin', '21.jpg', '21.jpg', 'User');
 
 --
 -- Indexes for dumped tables
