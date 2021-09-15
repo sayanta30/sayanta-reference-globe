@@ -28,14 +28,14 @@ if(checkLoggedStatus()){
          $updateQuery = $con->prepare('UPDATE user set user_role = ? where _id = ?');
          $updateQuery->bind_param('si', $_POST['updateUserRole'], $_POST['updateUserID']);
          if($updateQuery->execute()){
-            $successText .= 'Updated Role';
+            $successText .= '<p>Updated Role</p>';
          }
       }
       if($result['user_name'] != $_POST['updateUserName']){
          $updateQuery = $con->prepare('UPDATE user set user_name = ? where _id = ?');
          $updateQuery->bind_param('si', $_POST['updateUserName'], $_POST['updateUserID']);
          if($updateQuery->execute()){
-            $successText .= 'Updated Name';
+            $successText .= '<p>Updated Name</p>';
          }
       }
       if($result['user_email'] != $_POST['updateUserEmail']){
@@ -43,7 +43,7 @@ if(checkLoggedStatus()){
             $updateQuery = $con->prepare('UPDATE user set user_email = ? where _id = ?');
             $updateQuery->bind_param('si', $_POST['updateUserEmail'], $_POST['updateUserID']);
             if($updateQuery->execute()){
-               $successText .= 'Updated Email';
+               $successText .= '<p>Updated Email</p>';
             }
          }
          else{
@@ -54,21 +54,21 @@ if(checkLoggedStatus()){
          $updateQuery = $con->prepare('UPDATE user set user_mobile = ? where _id = ?');
          $updateQuery->bind_param('si', $_POST['updateUserMob'], $_POST['updateUserID']);
          if($updateQuery->execute()){
-            $successText .= 'Updated Mobile';
+            $successText .= '<p>Updated Mobile</p>';
          }
       }
       if($result['user_dob'] != $_POST['updateUserDOB']){
          $updateQuery = $con->prepare('UPDATE user set user_dob = ? where _id = ?');
          $updateQuery->bind_param('si', $_POST['updateUserDOB'], $_POST['updateUserID']);
          if($updateQuery->execute()){
-            $successText .= 'Updated Date of Birth';
+            $successText .= '<p>Updated Date of Birth</p>';
          }
       }
       if($result['user_signature'] != $_POST['updateUserSign']){
          $updateQuery = $con->prepare('UPDATE user set user_signature = ? where _id = ?');
          $updateQuery->bind_param('si', $_POST['updateUserSign'], $_POST['updateUserID']);
          if($updateQuery->execute()){
-            $successText .= 'Updated Sign';
+            $successText .= '<p>Updated Sign</p>';
          }
       }
 
@@ -84,7 +84,7 @@ if(checkLoggedStatus()){
                      $updateQuery = $con->prepare('UPDATE user set user_profile_photo = ? where _id = ?');
                      $updateQuery->bind_param('si', $fileName, $_POST['updateUserID']);
                      if($updateQuery->execute()){
-                        $successText .= 'Updated Profile Photo';
+                        $successText .= '<p>Updated Profile Photo</p>';
                      }
                      else{
                         $errorText .= '<p>Problem with the database.</p>';
@@ -111,7 +111,7 @@ if(checkLoggedStatus()){
                      $updateQuery = $con->prepare('UPDATE user set user_aadhar_card = ? where _id = ?');
                      $updateQuery->bind_param('si', $fileName, $_POST['updateUserID']);
                      if($updateQuery->execute()){
-                        $successText .= 'Updated Aadhar Card';
+                        $successText .= '<p>Updated Aadhar Card</p>';
                      }
                      else{
                         $errorText .= '<p>Problem with the database.</p>';
@@ -138,7 +138,7 @@ if(checkLoggedStatus()){
                      $updateQuery = $con->prepare('UPDATE user set user_pan_card = ? where _id = ?');
                      $updateQuery->bind_param('si', $fileName, $_POST['updateUserID']);
                      if($updateQuery->execute()){
-                        $successText .= 'Updated Pan Card';
+                        $successText .= '<p>Updated Pan Card</p>';
                      }
                      else{
                         $errorText .= '<p>Problem with the database.</p>';
