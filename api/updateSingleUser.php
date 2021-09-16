@@ -81,6 +81,7 @@ if(checkLoggedStatus()){
                if(in_array($fileType[1],$allowedExtensionProfilePhoto)){
                   $fileName = $_POST['updateUserID'].$_FILES['updateUserProfilePhoto']['name'];
                   if(move_uploaded_file($_FILES['updateUserProfilePhoto']['tmp_name'],'../uploaded_files/profilePhoto/'.$fileName)){
+                     unlink('../uploaded_files/profilePhoto/'.$result['user_profile_photo']);
                      $updateQuery = $con->prepare('UPDATE user set user_profile_photo = ? where _id = ?');
                      $updateQuery->bind_param('si', $fileName, $_POST['updateUserID']);
                      if($updateQuery->execute()){
@@ -108,6 +109,7 @@ if(checkLoggedStatus()){
                if(in_array($fileType[1],$allowedExtensionAadharPanCard)){
                   $fileName = $_POST['updateUserID'].$_FILES['updateUserAadhar']['name'];
                   if(move_uploaded_file($_FILES['updateUserAadhar']['tmp_name'],'../uploaded_files/aadharCard/'.$fileName)){
+                     unlink('../uploaded_files/aadharCard/'.$result['user_aadhar_card']);
                      $updateQuery = $con->prepare('UPDATE user set user_aadhar_card = ? where _id = ?');
                      $updateQuery->bind_param('si', $fileName, $_POST['updateUserID']);
                      if($updateQuery->execute()){
@@ -135,6 +137,7 @@ if(checkLoggedStatus()){
                if(in_array($fileType[1],$allowedExtensionAadharPanCard)){
                   $fileName = $_POST['updateUserID'].$_FILES['updateUserPan']['name'];
                   if(move_uploaded_file($_FILES['updateUserPan']['tmp_name'],'../uploaded_files/panCard/'.$fileName)){
+                     unlink('../uploaded_files/panCard/'.$result['user_pan_card']);
                      $updateQuery = $con->prepare('UPDATE user set user_pan_card = ? where _id = ?');
                      $updateQuery->bind_param('si', $fileName, $_POST['updateUserID']);
                      if($updateQuery->execute()){

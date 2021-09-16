@@ -79,6 +79,7 @@ if(checkLoggedStatus()){
                if(in_array($fileType[1],$allowedExtensionProfilePhoto)){
                   $fileName = $_SESSION['user_details']['_id'].$_FILES['updateSelfProfilePhoto']['name'];
                   if(move_uploaded_file($_FILES['updateSelfProfilePhoto']['tmp_name'],'../uploaded_files/profilePhoto/'.$fileName)){
+                     unlink('../uploaded_files/profilePhoto/'.$result['user_profile_photo']);
                      $updateQuery = $con->prepare('UPDATE user set user_profile_photo = ? where _id = ?');
                      $updateQuery->bind_param('si', $fileName, $_SESSION['user_details']['_id']);
                      if($updateQuery->execute()){
@@ -107,6 +108,7 @@ if(checkLoggedStatus()){
                if(in_array($fileType[1],$allowedExtensionAadharPanCard)){
                   $fileName = $_SESSION['user_details']['_id'].$_FILES['updateSelfAadhar']['name'];
                   if(move_uploaded_file($_FILES['updateSelfAadhar']['tmp_name'],'../uploaded_files/aadharCard/'.$fileName)){
+                     unlink('../uploaded_files/aadharCard/'.$result['user_aadhar_card']);
                      $updateQuery = $con->prepare('UPDATE user set user_aadhar_card = ? where _id = ?');
                      $updateQuery->bind_param('si', $fileName, $_SESSION['user_details']['_id']);
                      if($updateQuery->execute()){
@@ -135,6 +137,7 @@ if(checkLoggedStatus()){
                if(in_array($fileType[1],$allowedExtensionAadharPanCard)){
                   $fileName = $_SESSION['user_details']['_id'].$_FILES['updateSelfPan']['name'];
                   if(move_uploaded_file($_FILES['updateSelfPan']['tmp_name'],'../uploaded_files/panCard/'.$fileName)){
+                     unlink('../uploaded_files/panCard/'.$result['user_pan_card']);
                      $updateQuery = $con->prepare('UPDATE user set user_pan_card = ? where _id = ?');
                      $updateQuery->bind_param('si', $fileName, $_SESSION['user_details']['_id']);
                      if($updateQuery->execute()){
