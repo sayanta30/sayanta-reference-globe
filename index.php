@@ -5,12 +5,14 @@ if(!isset($_SESSION)){
 }
 
 include './api/checkLoggedStatusFunction.php';
-include './api/checkAdminAcessFunction.php';
-include './api/loggedUserDetailsFunction.php';
 
 if(!checkLoggedStatus()){
    header('Location: login');
+   exit;
 }
+
+include './api/checkAdminAcessFunction.php';
+include './api/loggedUserDetailsFunction.php';
 
 ?>
 <!DOCTYPE html>

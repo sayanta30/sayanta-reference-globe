@@ -8,6 +8,7 @@ include './api/checkLoggedStatusFunction.php';
 
 if(checkLoggedStatus()){
    header('Location: ./');
+   exit;
 }
 
 ?>
