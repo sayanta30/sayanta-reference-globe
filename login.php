@@ -71,31 +71,33 @@ if(checkLoggedStatus()){
 
       <!-- Sripts starts here -->
       <script>
-         $('#loginSubmit').click(function(e){
-            e.preventDefault();
-            if($('#userName').val().trim().length > 0 && $('#userPassword').val().trim().length > 0){
-               $.ajax({
-                  url: './api/validate.php',
-                  type: 'POST',
-                  data: {
-                     username: $('#userName').val().trim(),
-                     pass: $('#userPassword').val().trim()
-                  },
-                  success: function(res){
-                     res = JSON.parse(res);
-                     if(res['status'] == true){
-                        location.href = './'
+         $(document).ready(function(e){
+            $('#loginSubmit').click(function(e){
+               e.preventDefault();
+               if($('#userName').val().trim().length > 0 && $('#userPassword').val().trim().length > 0){
+                  $.ajax({
+                     url: './api/validate.php',
+                     type: 'POST',
+                     data: {
+                        username: $('#userName').val().trim(),
+                        pass: $('#userPassword').val().trim()
+                     },
+                     success: function(res){
+                        res = JSON.parse(res);
+                        if(res['status'] == true){
+                           location.href = './'
+                        }
+                        else{
+                           Swal.fire({
+                              title: 'Wrong Username or Password.',
+                              confirmButtonText: 'Try Again',
+                              allowOutsideClick: false
+                           });
+                        }
                      }
-                     else{
-                        Swal.fire({
-                           title: 'Wrong Username or Password.',
-                           confirmButtonText: 'Try Again',
-                           allowOutsideClick: false
-                        });
-                     }
-                  }
-               });
-            }
+                  });
+               }
+            });
          });
       </script>
    </body>

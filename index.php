@@ -4,10 +4,9 @@ if(!isset($_SESSION)){
    session_start();
 }
 
-// var_dump($_SESSION);
-
 include './api/checkLoggedStatusFunction.php';
 include './api/checkAdminAcessFunction.php';
+include './api/loggedUserDetailsFunction.php';
 
 if(!checkLoggedStatus()){
    header('Location: login');
@@ -39,7 +38,6 @@ if(!checkLoggedStatus()){
    </head>
    <body class="bg-light">
       <?php
-         include './api/loggedUserDetailsFunction.php';
          $result = loggedUserDetails();
       ?>
       <nav class="navbar navbar-light bg-dark">
